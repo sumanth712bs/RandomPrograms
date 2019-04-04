@@ -17,10 +17,10 @@ public class BinaryGaps {
 
     public static void main(String[] args) {
 
-        int number = 1041;
+        int number = -1000;
 
         char[] binArray = Integer.toBinaryString(number).toCharArray();
-        int maxGapsNum = BinaryGaps.getGapCount(binArray);
+        int maxGapsNum = BinaryGaps.getGapCount(number);
         if (maxGapsNum > 0) {
             System.out.println("Bianry format of given Number = " );
             Stream.of(binArray).forEach(x -> System.out.println(x));
@@ -30,7 +30,8 @@ public class BinaryGaps {
         }
     }
 
-    public static int getGapCount(char[] binArray) {
+    public static int getGapCount(int number) {
+        char[] binArray =  Integer.toBinaryString(number).toCharArray();
         int maxValue = 0;
         boolean firstFlag = false;
         int counter = 0;
